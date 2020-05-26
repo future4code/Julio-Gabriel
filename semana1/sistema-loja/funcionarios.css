@@ -1,0 +1,67 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#cabecalho {
+    background-color: yellow;
+    padding-bottom: 1%;
+}
+
+#rodape {
+    background-color: yellow;
+}
+
+#conteudo {
+    text-align: center;
+    margin: 2%;
+}
+
+#conteudo h1 {
+    margin: 2%;
+}
+
+#conteudo ul {
+    list-style-type: none;
+    text-align: center;
+    font-size: 150%;
+}
+
+#conteudo img {
+    margin-bottom: 2%;
+}
+
+#logo {
+    padding-top: 2%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+
+#nav-bar {
+    text-transform: uppercase;
+    margin-left: 25%;
+}
+
+#nav-bar a {
+    padding: 1%;
+    color: black;
+    margin-right: 1%;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: white;
+}
+
+#rodape p {
+    font-size: 80%;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-weight: bold;
+}

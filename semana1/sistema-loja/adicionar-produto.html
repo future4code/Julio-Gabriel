@@ -4,65 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produtos - Carros do Brasil</title>
+    <link rel="stylesheet" type="text/css" href="adicionar-produto.css">
 </head>
 <body>
     
-    <table border="0" width="900" align="center">
-        <tr>
-            <td height="89"><img src="imagens/logo.png"></td>
-        </tr>
-        <tr>
-            <td>
-                <a href="pagina-inicial.html">Página inicial |</a>
-                <a href="controle-estoque.html">Controle de Estoque |</a>
-                <a>Adicionar produto |</a>
-                <a href="funcionarios.html">Funcionários </a>
-            </td>
-        </tr>
+    <div id="cabecalho">
+        <div id="logo">
+            <h1>Carros do Brasil</h1>
+        </div>
+        <div id="nav-bar">
+            <a href="pagina-inicial.html">Página inicial</a>
+            <a href="controle-estoque.html">Controle de Estoque</a>
+            <a>Adicionar produto</a>
+            <a href="funcionarios.html">Funcionários </a>
+        </div>
+    </div>
 
-
-        <tr>
-            <td><h3>Cadastrar Produto</h3></td>
-            <br>
-            <td>
-            <tr>    
-                <td> 
-                    <form action="#">
+    <div id="conteudo">
+        <h1>Cadastrar Produto</h1> 
+            <div>
+                <form action="#">
                     <label for="description">Descrição</label>
-                    <input type="text" name="carro" id="description">
-                </td>    
-            </tr>
-            <tr>
-                <td>
+                    <input class="entrada-centro" type="text" name="carro" id="description"> <br>
                     <label for="preco">Preço do Carro</label>
-                    <input type="text" name="price" id="preco">
-                </td>    
-            </tr>
-
-            <tr>
-                <td>
-                <label for="disponible">Quantidade Disponível</label>
-                <input type="text" name="quantidade" id="disponible">
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
+                    <input type="text" name="price" id="preco"> <br>
+                    <label for="disponible">Quantidade Disponível</label>
+                    <input type="text" name="quantidade" id="disponible"> <br>
                     <label for="imagem">Imagem do Carro</label>
-                    <input type="file" name="picture" id="imagem">
-                </td>
-            </tr>
-            <tr>
-                <td>   
-                <button type="submit">Enviar</button>
-                </td>
-            </tr>    
+                    <input type="file" name="picture" id="imagem"> <br>
+                    <button type="submit">Cadastrar</button>
+            </form>
+            </div>
+    </div>
 
-            </form> </td>
-        </tr
-
-        
-    </table>    
+    <div id="rodape">
+        <p>CARROS DO BRASIL LTDA | CNPJ 00.000.000/0000-00 | AVENIDA INEXISTENTE, 0, CENTRO, SÃO PAULO - SP</p> 
+        <p>Formas de pagamento aceitas: cartões de crédito (Visa, MasterCard, Elo e American Express), 
+        cartões de débito (Itaú, Santander, Bradesco e Banco do Brasil) e boleto.</p>
+    </div>
 
 
 </body>
