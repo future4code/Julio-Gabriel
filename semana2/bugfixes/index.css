@@ -34,10 +34,6 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
-
 .botao-amarelo {
     display: block;
     margin: 0 auto;
