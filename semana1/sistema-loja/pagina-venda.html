@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Vendas - Carros do Brasil</title>
+    <link rel="stylesheet" type="text/css" href="pagina-venda.css">
+</head>
+<body>
+    <div id="cabecalho">
+        <div id="logo">
+            <h1>Carros do Brasil</h1>
+        </div>
+        <div id="nav-bar">
+            <a href="pagina-inicial.html">Home </a>
+            <a href="controle-estoque.html">Estoque </a>
+            <a href="adicionar-produto.html">Adicionar produto </a>
+            <a href="funcionarios.html">Funcionários</a>
+            <a href="pagina-venda.html">Vendas</a>
+            <a href="hist-vendas.html">Histórico de vendas</a>
+        </div>
+    </div>
+
+    <div id="conteudo">
+
+      <h1>Produtos em estoque:</h1>  
+        
+      <ul>
+          <li>Fiat UNO 2020 1.6 Completo 0KM</li>
+          <li>Hyundai HB-20 2020 1.6 Completo 0KM</li>
+          <li>Ford Fiesta 2020 1.6 Completo 0KM</li>
+          <li>Chevrolet Corsa 2020 1.6 Completo 0KM</li>
+          <li>Honda Civic 2020 1.6 Completo 0KM</li>
+      </ul>
+      
+      <h1>Vendas</h1>
+
+      <form action="#">
+        <label for="carros">Digite os carros desejados</label>
+        <br>
+        <input id="campo-car" type="text" name="cars" id="carros">
+        <br>
+        <br>
+        <label for="quant">Quantidade</label>
+        <br>
+        <input type="text" name="quantidade" id="quant">
+        <br>
+        <p>Forma de pagamento:</p>
+        <input type="checkbox" id="dinheiro" name="opcao1" value="money">
+        <label for="dinheiro">Dinheiro</label>
+        <input type="checkbox" id="cartao" name="opcao2" value="cartao">
+        <label for="dinheiro">Cartão</label
+        >
+        <br>
+        <button type="vendido">Cadastrar venda</button>
+      </form>
+    </div>
+
+    <div id="rodape">
+        <p>CARROS DO BRASIL LTDA | CNPJ 00.000.000/0000-00 | AVENIDA INEXISTENTE, 0, CENTRO, SÃO PAULO - SP</p> 
+        <p>Formas de pagamento aceitas: cartões de crédito (Visa, MasterCard, Elo e American Express), 
+        cartões de débito (Itaú, Santander, Bradesco e Banco do Brasil) e boleto.</p>
+    </div>
+</body>
+</html>
