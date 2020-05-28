@@ -1,0 +1,198 @@
+/* Nivel 1 */
+
+#pond {
+    exibição: flex;
+  justify-content: flex-end;
+}
+
+/* Nivel 2 */
+
+#pond {
+    exibição: flex;
+  justify-content: center;
+}
+
+/* Nivel 3 */
+
+#pond {
+    exibição: flex;
+  justify-content: space-around;
+}
+
+/* Nivel 4 */
+
+#pond {
+    exibição: flex;
+  justify-content: space-between;
+}
+
+/* Nivel 5 */
+
+#pond {
+    exibição: flex;
+  align-items: flex-end;
+  }
+
+/* Nivel 6 */
+
+#pond {
+    exibição: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+/* Nivel 7 */
+
+#pond {
+    exibição: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  }
+
+/* Nivel 8 */
+
+#pond {
+    exibição: flex;
+  flex-direction: row-reverse;
+  }
+
+/* Nivel 9 */
+
+#pond {
+    exibição: flex;
+  flex-direction: column;
+  }
+
+/* Nivel 10 */
+
+#pond {
+    exibição: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  }
+
+/* Nivel 11 */
+
+#pond {
+    exibição: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  }
+
+/* Nivel 12 */
+
+#pond {
+    exibição: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+/* Nivel 13 */
+
+#pond {
+    exibição: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-end;
+  }
+
+/* Nivel 14 */
+
+#pond {
+    exibição: flex;
+  }
+  
+  .amarelo {
+  order: 2;
+  }
+
+/* Nivel 15 */
+
+#pond {
+    exibição: flex;
+  }
+  
+  .red {
+  order: -1
+  }
+
+/* Nivel 16 */
+
+#pond {
+    exibição: flex;
+    alinhar itens: início flexível;
+  }
+  
+  .amarelo {
+  align-self: flex-end;
+  }
+
+/* Nivel 17 */
+
+#pond {
+    exibição: flex;
+    alinhar itens: início flexível;
+  }
+  
+  .amarelo {
+  order: 3;
+  align-self: flex-end;
+  }
+
+/* Nivel 18 */
+
+#pond {
+    exibição: flex;
+  flex-wrap: wrap;
+  }
+
+/* Nivel 19 */
+
+#pond {
+    exibição: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  }
+
+/* Nivel 20 */
+
+#pond {
+    exibição: flex;
+  flex-flow: column wrap;
+}
+
+/* Nivel 21 */
+
+#pond {
+    exibição: flex;
+    flex-wrap: wrap;
+  align-content: flex-start;
+  }
+
+
+/* Nivel 22 */
+
+#pond {
+    exibição: flex;
+    flex-wrap: wrap;
+  align-content: flex-end;
+  }
+
+/* Nivel 23 */
+
+#pond {
+    exibição: flex;
+    flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-content: center;
+  }
+
+/* Nivel 24 */
+
+#pond {
+    exibição: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap-reverse;
+  justify-content:center;
+  align-content:space-between;
+  }

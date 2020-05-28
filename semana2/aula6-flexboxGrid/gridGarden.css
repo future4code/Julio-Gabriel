@@ -1,0 +1,345 @@
+/* Nivel 1 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-column-start: 3;
+  }
+
+/* Nivel 2 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #Poção {
+  grid-column-start: 5;
+  }
+
+/* Nivel 3 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    início da coluna da grade: 1;
+  grid-column-end: 4;
+  }
+
+/* Nivel 4 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    início da coluna da grade: 5;
+  grid-column-end: 2;
+  }
+
+/* Nivel 5 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    início da coluna da grade: 1;
+  grid-column-end: -2;
+  }
+
+/* Nivel 6 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #Poção {
+  grid-column-start: -3;
+  }
+
+/* Nivel 7 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    início da coluna da grade: 2;
+  grid-column-end: span 2;
+  }
+
+/* Nivel 8 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    início da coluna da grade: 1;
+  grid-column-end: span 5;
+  }
+
+/* Nivel 9 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-column-start: span 3;
+    fim da coluna da grade: 6;
+  }
+
+/* Nivel 10 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-column: 4/6;
+  }
+
+/* Nivel 11 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-column: 2/5;
+  }
+
+/* Nivel 12 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-row-start: 3;
+  }
+
+/* Nivel 13 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-row: 3/6;
+  }
+
+/* Nivel 14 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #Poção {
+  grid-column: 2;
+  grid-row: 5;
+  }
+
+/* Nivel 15 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-column: 2 / 6;
+  grid-row: 1 / 6;
+  }
+
+/* Nivel 16 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+  grid-area: 1 / 2 / 4 / 6;
+  }
+
+/* Nivel 17 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  # water-1 {
+    área da grade: 1/4/6/5;
+  }
+  
+  # water-2 {
+  grid-area: 2/6/5/3;
+  }
+
+/* Nivel 18 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  .água {
+    ordem: 0;
+  }
+  
+  #Poção {
+  order: 4;
+  }
+
+/* Nivel 19 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  .água {
+    ordem: 0;
+  }
+  
+  .Poção {
+  order: -1;
+  }
+
+/* Nivel 20 */
+
+#garden {
+    exibição: grade;
+  grid-template-columns: 50%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    coluna de grade: 1;
+    linha da grade: 1;
+  }
+
+/* Nivel 21 */
+
+#garden {
+    exibição: grade;
+  grid-template-columns: repeat(8, 12.5%);
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    coluna de grade: 1;
+    linha da grade: 1;
+  }
+
+/* Nivel 22 */
+
+#garden {
+    exibição: grade;
+  grid-template-columns: 100px 3em 40%;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+
+/* Nivel 23 */
+
+#garden {
+    exibição: grade;
+  grid-template-columns: 1fr 5fr;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+
+/* Nivel 24 */
+
+#garden {
+    exibição: grade;
+  grid-template-columns: 50px 1fr 1fr 1fr 50px;
+    linhas de modelo de grade: 20% 20% 20% 20% 20%;
+  }
+  
+  #água {
+    área da grade: 1/1 / 6/2;
+  }
+  
+  #Poção {
+    área da grade: 1/5/6/6;
+  }
+
+/* Nivel 25 */
+
+#garden {
+    exibição: grade;
+  grid-template-columns: 75px 3fr 2fr;
+    linhas de modelo de grade: 100%;
+  }
+
+/* Nivel 26 */
+
+#garden {
+    exibição: grade;
+    colunas de modelo de grade: 20% 20% 20% 20% 20%;
+  grid-template-rows: 50px 0fr 0fr 0fr;
+  }
+  
+  #água {
+    coluna de grade: 1/6;
+    linha de grade: 5/6;
+  }
+
+/* Nivel 27 */
+
+#garden {
+    exibição: grade;
+  grid-template: 60%/200px;
+  }
+  
+  #água {
+    coluna de grade: 1;
+    linha da grade: 1;
+  }
+
+/* Nivel 28 */
+
+#garden {
+    exibição: grade;
+  grid-template: 1fr 50px/20% 80%;
+  }

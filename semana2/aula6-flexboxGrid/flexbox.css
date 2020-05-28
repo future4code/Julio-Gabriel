@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#header {
+    padding: 1%;
+    background-color: #2ECC40;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    align-self: center;    
+    text-align: center;
+}
+
+#menu {
+    padding: 1%;
+    background-color: #FFDC00;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 8;
+    align-self: center;
+    text-align: center;
+}
+
+.container2 {
+    width: 100vw;
+    height: 50vh;
+    background-color: #F012BE;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#content {
+    flex-grow: 2; 
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.container3 {  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#content2 {  
+    background-color: #0074D9;
+    color: white;
+    display: flex;
+}
+
+#branco {  
+    background-color: white;
+    display: flex;
+}
+
+#image {
+    background-color: #FF4136;  
+    color: white;
+    display: flex;
+}
+
+#extra {
+    background-color: #01FF70;  
+    color: white;
+    display: flex;
+}
+
+/* 
+.container4 {
+    max-width: 600px;
+    background-color: blue;
+    display: flex;
+}
+
+*/
+
+
