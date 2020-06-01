@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-device-width : 800px) {
+
+header {
+    width: 100vw;
+    height: 10vh;
+    background-color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0 1%;
+}
+
+header input {
+    margin: 0 5%;
+    padding: 0.5rem;
+    width: 8vw;
+}
+
+main {
+    width: 100vw;
+    height: 76vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2vh 0;
+}
+
+main article {
+    width: 95vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1vh 1vw;
+}
+
+main article section {
+    border: 1px solid green;
+    width: 15vw;
+    height: 25vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+main article section video {
+    width: 15vw;
+    height: 20vh;   
+}
+
+main article section a {
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer h1 {
+    margin-left: 1%;
+}
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 800px) {
+
+header {
+    width: 100vw;
+    height: 10vh;
+    background-color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0 2vw;
+}
+
+header input {
+    margin: 0 5%;
+    padding: 0.5rem;
+    width: 40vw;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main article {
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh 1vw;
+}
+
+main article section {
+    border: 1px solid green;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 95vw;
+    margin: 1vh 0;
+}
+
+main article section video {
+    width: 95vw;
+    height: 50vh;
+}
+
+main article section a {
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+    
+}
+
