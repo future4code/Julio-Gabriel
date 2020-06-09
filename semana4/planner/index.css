@@ -1,0 +1,35 @@
+header {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.espacamento {
+    margin: 0 2vw;
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5vh 0;
+}
+
+#container section {
+    font-size: 2em;
+    width: 30vw;
+    height: 50vh;
+    border-left: 1px dashed black;
+    border-right: 1px dashed black;
+}
+
+h1 {
+    margin: 2vh 2vw;
+}
+
+.riscado {
+    text-decoration: line-through;
+    color: green;
+}

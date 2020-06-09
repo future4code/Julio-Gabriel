@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js" defer></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Planner Semanal</title>
+  </head>
+  <body>
+    <header>
+
+        <label class="espacamento" for="tarefa">Nova tarefa:</label>
+        <input type="text" name="tarefa" value="" id="nova-tarefa" >
+  
+        <select name="select" id="selecao" class="espacamento">
+          <option value="1" selected class="dia-da-semana">Segunda-Feira</option> 
+          <option value="2" class="dia-da-semana">Terça-Feira</option>
+          <option value="3" class="dia-da-semana">Quarta-Feira</option>
+          <option value="4" class="dia-da-semana">Quinta-Feira</option>
+          <option value="5" class="dia-da-semana">Sexta-Feira</option>
+          <option value="6" class="dia-da-semana">Sábado</option>
+          <option value="7" class="dia-da-semana">Domingo</option>
+        </select>
+  
+        <button type="submit" onclick="criarTarefa()"id="meu-botao" class="espacamento">Criar Tarefa!</button>
+
+    </header>
+
+    <article id="container">
+      <section>
+        <h1>Segunda</h1>
+        <ul onclick="riscarTexto()" id="lista-segunda"></ul>
+      </section>
+      <section>
+        <h1>Terça</h1>
+        <ul id="lista-terca"></ul>
+      </section>
+    </article>
+    <article id="container">
+      <section>
+        <h1>Quarta</h1>
+        <ul id="lista-quarta"></ul>
+      </section>
+      <section>
+        <h1>Quinta</h1>
+        <ul id="lista-quinta"></ul>
+      </section>
+    </article>
+    <article id="container">
+      <section>
+        <h1>Sexta</h1>
+        <ul id="lista-sexta"></ul>
+      </section>
+      <section>
+        <h1>Sábado</h1>
+        <ul id="lista-sabado"></ul>
+      </section>
+    </article>
+    <article id="container">
+      <section>
+        <h1>Domingo</h1>
+        <ul id="lista-domingo"></ul>
+      </section>
+    </article>
+
+  </body>
+</html>
