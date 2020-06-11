@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js" defer></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Controlador de Despesas</h1>
+        <h5>Cadastrar empresa</h5>
+        <label for="value">Valor</label>
+        <input type="number" name="value" id="valor-despesa" value="">
+        <label for="type">Tipo (Casa, Viagem, Rolês, Outros</label>
+        <select name="type" id="selecao-tipos">
+          <option value="Casa">Casa</option>
+          <option value="Viagem">Viagem</option>
+          <option value="Rolês">Rolês</option>
+          <option value="Outros">Outros</option>
+        </select>
+        <label for="description">Descrição</label>
+        <input type="text" name="description" id="descricao-despesa" value="">
+        <button onclick="despesaCadastrada(arrayDespesas, mostrarDespesas)">Cadastrar Despesa</button>
+      </section>
+
+      <section>
+        <h1>Despesas Detalhadas</h1>
+        <label for="type2">Tipo (Casa, Viagem, Rolês, Outros</label>
+        <select name="type2" id="selecao-tipos2">
+          <option value="Casa">Casa</option>
+          <option value="Viagem">Viagem</option>
+          <option value="Rolês">Rolês</option>
+          <option value="Outros">Outros</option>
+        </select>
+        <label for="value-min">Valor Minímo</label>
+        <input type="number" name="value-min" value="" id="valor-min">
+        <label for="value-max">Valor Máximo</label>
+        <input type="number" name="value-max" value="" id="valor-max">
+      </section>
+
+      <section>
+        <h1>Extrato</h1>
+        <p id="valor-total">Valor Total:</p>
+      </section>
+    </main>
+  </body>
+</html>
