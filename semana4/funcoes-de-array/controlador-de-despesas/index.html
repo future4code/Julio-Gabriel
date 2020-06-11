@@ -24,7 +24,7 @@
         </select>
         <label for="description">Descrição</label>
         <input type="text" name="description" id="descricao-despesa" value="">
-        <button onclick="despesaCadastrada(arrayDespesas, mostrarDespesas)">Cadastrar Despesa</button>
+        <button onclick="despesaCadastrada(arrayDespesas, mostrarValorDespesas), mostraTudo(arrayDespesas)">Cadastrar Despesa</button>
       </section>
 
       <section>
@@ -40,6 +40,9 @@
         <input type="number" name="value-min" value="" id="valor-min">
         <label for="value-max">Valor Máximo</label>
         <input type="number" name="value-max" value="" id="valor-max">
+        <button type="submit" onclick="filtragemDespesas(arrayDespesas)">FILTRAR</button>
+        <button type="submit" onclick="mostraTudo(arrayDespesas)">LIMPAR</button>
+        <div id="lista-de-despesas"></div>
       </section>
 
       <section>
