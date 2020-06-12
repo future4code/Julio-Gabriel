@@ -229,6 +229,20 @@ console.log(criarRetangulo(5, 10))
 
 */
 
+/* Exercício 3 - Exercícios de Objetos 
+
+const filme = {
+    título: 'À Procura da Felicidade',
+    ano: '2007',
+    diretor: 'Gabriele Muccino',
+    atores: 'Will Smith e Jaden Smith'
+}
+
+console.log("Venha assistir ao filme " + filme.título + ", de " + filme.ano + ", dirigido por " + filme.diretor + " e estrelado por: " + filme.atores)
+
+*/
+
+
 
 
 
