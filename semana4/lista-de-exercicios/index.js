@@ -156,37 +156,43 @@ if (resultado !== 0) {
 
 */
 
-/* Exercício 1 - Exercícios de Funções */
+/* Exercício 1 - Exercícios de Funções 
 
-const numeros = [1,2,3,4,5,6,7,8,9,10]
+const numeros = [1,10,2,9,3,8,4,7,5,6]
 
 
 function imprimeNaTela(array) {
 
     let primeiroMaior = 0
-    let segundoMaior
+    let segundoMaior = 0
     let primeiroMenor = Infinity
-    let segundoMenor
+    let segundoMenor = Infinity
 
-    for(elemento of array) {
-
-        if (primeiroMaior <= elemento) {
-            segundoMaior = primeiroMaior
+    for (elemento of array) {
+        if (primeiroMaior < elemento) {
             primeiroMaior = elemento
         }
-
-        if (primeiroMenor >= elemento) {
-            segundoMenor = primeiroMenor
+        if (primeiroMenor > elemento) {
             primeiroMenor = elemento
         }
-
     }
 
-    console.log(segundoMaior, primeiroMenor, segundoMenor)
+    for (elemento of array) {
+        if ((elemento < primeiroMaior) && (elemento > primeiroMenor)) {
+            if (segundoMaior < elemento) {
+                segundoMaior = elemento
+            }
+            if (segundoMenor > elemento) {
+                segundoMenor = elemento
+            }
+        }
+    }
+
+    console.log("O segundo maior número é: " + segundoMaior + ". E o segundo menor número é: " + segundoMenor)
 
 }
 
-imprimeNaTela(numeros)
+imprimeNaTela(numeros) */
 
 
 
