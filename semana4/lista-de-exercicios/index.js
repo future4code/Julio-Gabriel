@@ -204,6 +204,17 @@ imprimeNaTela()
 
 */
 
+/* Exercício 1 - Exercícios de Objetos 
+
+Arrays são como se fosse uma gaveta onde podemos guardar várias informações/valor, são utilizadas para guardar 
+lista de itens e/ou numeros. Já objetos é como se fosse uma gaveta com divisórias onde guardamos cada propriedade
+em sua respectiva divisória e etiquetamos cada divisória com o seu nome, objetos são usados para guardar varias pro
+priedades, ou seja, informações de um determinado elemento. 
+
+*/
+
+
+
 
 
 
