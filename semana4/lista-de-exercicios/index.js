@@ -23,3 +23,16 @@ de cada uma delas. O primeiro resultado obtido será 165, já o segundo resulto,
 imprimirá a mensagem TIPO DE INVESTIMENTO INFORMADO INCORRETO! 
 
 */
+
+/* Exercicio 3 - Interpretação de código
+
+Existem 3 arrays, sendo um deles chamado de numeros, e outros dois de array1 e array2. Existe um laço for to que vai 
+percorrer por cada elemento do array numeros e dividirá este elemento por que ele estiver por 2 e verifica se a sobra
+da divisão por 2 é 0, se for zero ele adiciona este elemento para o array1, ou seja, o array1 terá apenas números pares
+caso a sobra seja diferente de zero ele adiciona este elemento no array2, ou seja, o array 2 terá apenas números impares.
+Depois de terminado o laço ele imprime na tela o comprimento do array números, o comprimento do array1 e o comprimento do
+array2. A primeira mensagem será: Quantidade total de números 14. A segunda mensagem é: 6. A terceira mensagem é: 8.
+
+*/
+
+
