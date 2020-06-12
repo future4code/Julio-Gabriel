@@ -213,6 +213,22 @@ priedades, ou seja, informações de um determinado elemento.
 
 */
 
+/* Exercício 2 - Exercícios de Objetos 
+
+function criarRetangulo (ld1, ld2) {
+    const retangulo = {
+        largura: ld1,
+        altura: ld2,
+        perimetro: (2*(ld1+ld2)),
+        area: (ld1*ld2)
+    }
+    return retangulo
+}
+
+console.log(criarRetangulo(5, 10))
+
+*/
+
 
 
 
