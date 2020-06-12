@@ -242,6 +242,30 @@ console.log("Venha assistir ao filme " + filme.título + ", de " + filme.ano + "
 
 */
 
+/* Exercício 4 - Exercícios de Objetos 
+
+const pessoa = {
+    nome: 'Julio Gabriel',
+    idade: '23',
+    email: 'juliogabriel@outlook.com',
+    endereco: 'Rua dos Bobos, 0, Centro, Cidade, Estado'
+}
+
+function anonimizarPessoa (people) {
+    const newpeople = {
+        ...people, 
+            nome: 'ANÔNIMO'
+    }
+
+    return newpeople
+}
+
+console.log(pessoa, anonimizarPessoa(pessoa))
+
+*/
+
+
+
 
 
 
