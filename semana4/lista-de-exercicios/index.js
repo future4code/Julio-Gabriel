@@ -19,19 +19,30 @@ função por 1.03 e para de verificar, caso seja Renda fixa multiplica o valor p
 por 1.06 e caso seja Ações ele multiplica por 1.1. A função retorna a variavel valorAposInvestimento. Atribui e chama
 a função investeDinheiro com os parametros "Ações" e 150 a variavel novoMontante e também atribui e chama a função
 investeDinheiro com os parametros "TesouroDireto, 200" a varivel segundoMontante e depois imprime o resultado no console
-de cada uma delas. O primeiro resultado obtido será 165, já o segundo resulto, como não existe a string Tesouto Direto
+de cada uma delas. O primeiro resultado obtido será 165, já o segundo resultado, como não existe a string Tesouto Direto
 imprimirá a mensagem TIPO DE INVESTIMENTO INFORMADO INCORRETO! 
 
 */
 
 /* Exercicio 3 - Interpretação de código
 
-Existem 3 arrays, sendo um deles chamado de numeros, e outros dois de array1 e array2. Existe um laço for to que vai 
+Existem 3 arrays, sendo um deles chamado de numeros, e outros dois de array1 e array2. Existe um laço for of que vai 
 percorrer por cada elemento do array numeros e dividirá este elemento por que ele estiver por 2 e verifica se a sobra
 da divisão por 2 é 0, se for zero ele adiciona este elemento para o array1, ou seja, o array1 terá apenas números pares
 caso a sobra seja diferente de zero ele adiciona este elemento no array2, ou seja, o array 2 terá apenas números impares.
 Depois de terminado o laço ele imprime na tela o comprimento do array números, o comprimento do array1 e o comprimento do
 array2. A primeira mensagem será: Quantidade total de números 14. A segunda mensagem é: 6. A terceira mensagem é: 8.
+
+*/
+
+/* Exercicio 4 - Interpretação de código
+
+Existe um array com diversos números, e duas variáveis uma chamada de numero1 e foi atribuída a ela o valor de Infinity e
+outra chamada de numero2 com o valor de 0. Existe um laço for of que verifica elemento por elemento do array numeros e se
+o elemento for menor que a variável numero1 ele atribui a variavel numero1 o valor do elemento e também se o elemento é
+maior que o valor da variável numero2 ele atribui o valor do elemento a variável numero2, ou seja, o for of, nos da como
+resultado o menor numero na variável numero1 e o maior numero na variavel numero2 do array. Depois ele imprime no console
+cada a variável número1 e número dois. Imprimirá os valores -10 na primeira linha e 1590 na segunda linha.
 
 */
 
