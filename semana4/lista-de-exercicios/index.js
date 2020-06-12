@@ -194,6 +194,18 @@ function imprimeNaTela(array) {
 
 imprimeNaTela(numeros) */
 
+/* Exercício 2 - Exercícios de Funções 
+
+const imprimeNaTela = () => {
+    return alert("Hello Future4")
+}
+
+imprimeNaTela()
+
+*/
+
+
+
 
 
 
