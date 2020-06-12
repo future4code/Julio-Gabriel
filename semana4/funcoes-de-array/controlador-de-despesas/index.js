@@ -50,7 +50,7 @@ function filtragemDespesas(arrayDespesas) {
         })
 
         const mapeiaDespesas = filtroDespesas.map((elemento, index, array) => {
-            insereLista.innerHTML += `<li>Elemento: ${elemento.valor}, Tipo: ${elemento.tipo}, Descricao: ${elemento.descricao}</li>`
+            insereLista.innerHTML += `<li>Valor: ${elemento.valor}, Tipo: ${elemento.tipo}, Descricao: ${elemento.descricao}</li>`
         })
 
     } else {
@@ -69,7 +69,7 @@ function mostraTudo(arrayDespesas) {
     insereLista.innerHTML = ""
 
     const mapeiaTodasDespesas = arrayDespesas.map((elements, index, array) => {
-        insereLista.innerHTML += `<li>Elemento: ${elements.valor}, Tipo: ${elements.tipo}, Descricao: ${elements.descricao}</li>`
+        insereLista.innerHTML += `<li>Valor: ${elements.valor}, Tipo: ${elements.tipo}, Descricao: ${elements.descricao}</li>`
     })
 
     valorMin.value = ""
