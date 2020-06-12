@@ -156,6 +156,38 @@ if (resultado !== 0) {
 
 */
 
+/* Exercício 1 - Exercícios de Funções */
+
+const numeros = [1,2,3,4,5,6,7,8,9,10]
+
+
+function imprimeNaTela(array) {
+
+    let primeiroMaior = 0
+    let segundoMaior
+    let primeiroMenor = Infinity
+    let segundoMenor
+
+    for(elemento of array) {
+
+        if (primeiroMaior <= elemento) {
+            segundoMaior = primeiroMaior
+            primeiroMaior = elemento
+        }
+
+        if (primeiroMenor >= elemento) {
+            segundoMenor = primeiroMenor
+            primeiroMenor = elemento
+        }
+
+    }
+
+    console.log(segundoMaior, primeiroMenor, segundoMenor)
+
+}
+
+imprimeNaTela(numeros)
+
 
 
 
