@@ -46,4 +46,29 @@ cada a variável número1 e número dois. Imprimirá os valores -10 na primeira 
 
 */
 
+/* Exercicio 1 - Exercícios de Lógica de Programação
+
+for of, for (let i = 0; let i <= lista.length; i++) {} e lista.forEach
+
+Os primeiro muito utilizados em arrays que não guardam objetos em seus índices, já o último muito utilizado em arrays que
+guardam objetos.
+
+lista = [1,2,3,4,5]
+
+for (elemento of lista) {
+    console.log(elemento)
+}
+
+for (let i = 0; i <= lista.length; i++) {
+    console.log(i)
+}
+
+const demonstracao = lista.forEach((elemento, index, array) => {
+    console.log(elemento)
+});
+
+*/
+
+
+
 
