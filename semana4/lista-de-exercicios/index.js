@@ -96,7 +96,30 @@ while (i < resultado) {
     i++
 }
 
+*/ 
+
+/* Exercício 4 - Exercícios de Lógica de Programação
+
+const a = Number(prompt("Digite o valor do lado A do triângulo"))
+const b = Number(prompt("Digite o valor do lado B do triângulo"))
+const c = Number(prompt("Digite o valor do lado C do triângulo"))
+
+if (a === c) {
+    if (a === b) {
+        console.log("O triângulo é equilátero")
+    } else {
+        console.log("O triângulo é isoceles")
+    }
+} else if (a === b) {
+    console.log("O triângulo é isóceles")
+} else if (b === c) {
+    console.log("O triângulo é isóceles")
+} else {
+    console.log("O triângulo é escaleno")
+}
+
 */
+
 
 
 
