@@ -120,6 +120,43 @@ if (a === c) {
 
 */
 
+/* Exercício 5 - Exercícios de Lógica de Programação 
+
+const a = Number(prompt("Digite o primeiro número"))
+const b = Number(prompt("Digite o segundo número"))
+let resultado
+
+if (a > b) {
+    console.log("O maior é: " + a)
+    resultado = a - b
+} else if (a === b) {
+    console.log("Os numeros são que você digitou são iguais")
+    resultado = 0
+} else {
+    console.log("O maior é: " + b)
+    resultado = b - a
+}
+
+function divisivel(valor1, valor2) {
+    if (valor1 % valor2 === 0) {
+        console.log( valor1 + " é divisível por " + valor2)
+    } else {
+        console.log( valor1 + " não é divisível por " + valor2)
+    }
+}
+
+divisivel(a, b)
+divisivel(b, a)
+
+if (resultado !== 0) {
+    console.log("A diferença entre eles é " + resultado)
+} else {
+    console.log("A diferença é zero")
+}
+
+*/
+
+
 
 
 
