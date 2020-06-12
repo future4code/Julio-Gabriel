@@ -79,6 +79,28 @@ e) true
 
 */
 
+/* Exercício 3 - Exercícios de Lógica de Programação
+
+O código do meu "colega" não funciona porque ele entra em loop infinito pois o valor de i permanece inalterado e as con
+dições de comparação também estavam erradas. Minha resolução seria a que está abaixo:
+
+const primeirosPares = prompt("Digite um número para descobrir os pares")
+
+const resultado = primeirosPares*2
+let i = 0
+
+while (i < resultado) {
+    if (i % 2 === 0){
+        console.log(i)
+    }
+    i++
+}
+
+*/
+
+
+
+
 
 
 
