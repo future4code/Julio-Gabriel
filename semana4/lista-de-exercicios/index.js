@@ -69,6 +69,16 @@ const demonstracao = lista.forEach((elemento, index, array) => {
 
 */
 
+/* Exercicio 2 - Exercícios de Lógica de Programação
+
+a) false
+b) false
+c) true
+d) true
+e) true
+
+*/
+
 
 
 
