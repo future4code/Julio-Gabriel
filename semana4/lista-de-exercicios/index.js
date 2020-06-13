@@ -396,6 +396,34 @@ console.log(enviaEmailNaoCancelados, enviaEmailCanceladas)
 
 */
 
+/* Exercício 5 - Exercícios de Funções de array 
+
+const contas = [
+	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+]
+
+const atualizaSaldos = contas.forEach((cliente, index, array) => {
+    if (cliente.cliente === "João") {
+        cliente.saldoTotal = 400
+    } else if (cliente.cliente === "Paula") {
+        cliente.saldoTotal = 6240
+    } else if (cliente.cliente === "Pedro") {
+        cliente.saldoTotal = -3340
+    } else if (cliente.cliente === "Luciano") {
+        cliente.saldoTotal = -1900
+    } else if (cliente.cliente === "Artur") {
+        cliente.saldoTotal = 1300
+    } else if (cliente.cliente === "Soter") {
+        cliente.saldoTotal = 1200
+    }
+})
+
+console.log(contas) */
 
 
 
