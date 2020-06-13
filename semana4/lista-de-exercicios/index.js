@@ -289,6 +289,32 @@ const pessoasMenores = arrayPessoas.filter((pessoa, index, array) => {
 
 console.log(pessoasAdultas, pessoasMenores) */
 
+/* Exercício 2 - Exercícios de Funções de array 
+
+const array = [1, 2, 3, 4, 5, 6]
+
+const dobraArray = array.map((numero, index, array) => {
+    return numero * 2
+})
+
+const triplicaArray = array.map((numero, index, array) => {
+    return `${numero * 3}`
+})
+
+const verificaPar = array.map((numero, index, array) => {
+    if (numero % 2 === 0){
+        return  `${numero} é par`
+    } else {
+        return `${numero} é impar`
+    }
+}) 
+
+console.log(dobraArray, triplicaArray, verificaPar)
+
+*/
+
+
+
 
 
 
