@@ -69,12 +69,12 @@ class App extends React.Component {
       {
         nomeUsuario:"joaozinho",
         fotoUsuario:"https://picsum.photos/50/10",
-        fotoPost:"https://picsum.photos/200/100"
+        fotoPost:"https://picsum.photos/200/160"
       },
       {
         nomeUsuario:"terezinha",
         fotoUsuario:"https://picsum.photos/50/20",
-        fotoPost:"https://picsum.photos/200/200"
+        fotoPost:"https://picsum.photos/200/170"
       }
     ],
 
@@ -93,18 +93,22 @@ class App extends React.Component {
 
     const novoPostagem = [...this.state.posts, novaPostagem];
 
-    this.setState({ Posts: novoPostagem });
+    this.setState({ posts: novoPostagem });
+    this.setState({valorInputNomeDoUsuario: "", valorInputFotoDoUsuario: "", valorInputFotoPostagem: ""})
   };
 
   onChangeInputNomeDoUsuario = event => {
+    console.log(this.state.valorInputNomeDoUsuario)
     this.setState({ valorInputNomeDoUsuario: event.target.value });
   };
 
   onChangeInputFotoDoUsuario = event => {
+    console.log(this.state.valorInputFotoDoUsuario)
     this.setState({ valorInputFotoDoUsuario: event.target.value });
   };
 
   onChangeInputFotoPostagem = event => {
+    console.log(this.state.valorInputFotoPostagem)
     this.setState({ valorInputFotoPostagem: event.target.value });
   };
 
