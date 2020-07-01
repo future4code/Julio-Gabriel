@@ -54,13 +54,10 @@ class Cadastro extends React.Component {
           headers: {
               Authorization: "julio-gabriel-turing"
           }
-      })
-      .then((response) => {
-        this.setState({inputNomeValue: ""})  
-        this.setState({inputEmailValue: ""})
+      }).then((response) => {
+        this.setState({inputNomeValue: "", inputEmailValue: ""})  
         return alert("Usuário cadastrado com sucesso")
-      })
-      .catch((error) => {
+      }).catch((error) => {
         return alert("Usuário não foi cadastrado")
       })
   }
@@ -75,7 +72,7 @@ class Cadastro extends React.Component {
         </ContainerEntradas>
         <ContainerEntradas>
             <label>Email:</label>
-            <input type="text" value={this.state.inputEmailValue} onChange={this.onChangeInputEmailValue}></input>
+            <input type="email" value={this.state.inputEmailValue} onChange={this.onChangeInputEmailValue}></input>
         </ContainerEntradas>
         <BotaoSalvar onClick={this.criarUsuários}>Salvar</BotaoSalvar>
       </ContainerCadastro>
