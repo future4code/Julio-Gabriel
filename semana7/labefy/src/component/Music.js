@@ -137,7 +137,7 @@ class Music extends React.Component {
                 </CamposDeEntradasDeDados>
 
                 <CamposDeEntradasDeDados>
-                    <p>Selecione a playlist que seja adicionar: </p>
+                    <p>Selecione a playlist que deseja adicionar: </p>
                     <CampoDeSelecao onChange={this.onChangeSelecionaPlaylist} value={this.state.playlistSelecionada}>
                         <option>Selecionar playlist</option>
                             {this.state.selecionaPlaylist.map((playlist) => {

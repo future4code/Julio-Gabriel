@@ -3,6 +3,19 @@ import styled from 'styled-components'
 import axios from 'axios'
 import Details from './Details'
 
+const ContainerPlaylist = styled.div
+`
+width: 31.5vw;
+display: flex;
+flex-direction: column;
+justify-content: center;
+`
+
+const Teste = styled.li
+`
+padding: 1px;
+`
+
 const BotaoMinimizarPlaylist = styled.div
 `
 width: 10vw;
@@ -15,6 +28,34 @@ font-weight: bold;
 display: flex;
 justify-content: center;
 align-items: center;
+margin-top: 3vh;
+`
+
+const BotaoRemover = styled.button
+`
+width: 5vw;
+height: 3vh;
+background-color: red;
+color: white;
+font-weight: bold;
+border-style: none;
+`
+
+const BotaoMaisDetalhes = styled.button
+`
+width: 5vw;
+height: 3vh;
+background-color: green;
+color: white;
+font-weight: bold;
+border-style: none;
+`
+
+const ListaDePlaylist = styled.ul
+`
+margin: 0px;
+padding: 0px;
+list-style: none;
 `
 
 class Playlists extends React.Component {
@@ -68,14 +109,15 @@ class Playlists extends React.Component {
         const renderizaNaTela = () => {
             if (this.state.moreDetails === false) {
                 return (
-                    <div>
-                        <ul>
+                    <ContainerPlaylist>
+                        <h3>Suas playlist</h3>
+                        <ListaDePlaylist>
                             {this.state.playlists.map((playlist) => {
-                                return <div key={playlist.id}>{playlist.name} <button onClick={() => this.onClickRemoverPlaylist(playlist.id)}>Remover</button> <button onClick={() => this.onClickMoreDetails(playlist.id, playlist.name)}>Mais Detalhes</button></div>
+                                return <Teste key={playlist.id}>{playlist.name} <BotaoRemover onClick={() => this.onClickRemoverPlaylist(playlist.id)}>Remover</BotaoRemover> <BotaoMaisDetalhes onClick={() => this.onClickMoreDetails(playlist.id, playlist.name)}>Detalhes</BotaoMaisDetalhes></Teste>
                             })}
-                        </ul>
+                        </ListaDePlaylist>
                         <BotaoMinimizarPlaylist onClick={this.props.minimizarPlaylists}>MINIMIZAR PLAYLIST</BotaoMinimizarPlaylist>
-                    </div>
+                    </ContainerPlaylist>
                 )
             } else {
                 return <Details 

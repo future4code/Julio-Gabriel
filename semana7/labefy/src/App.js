@@ -28,10 +28,6 @@ flex-direction: column;
 align-items: center;
 `
 
-const ContainerListaDePlaylist = styled.div
-`
-`
-
 const InputNomePlaylist = styled.input
 `
 width: 20vw;
@@ -155,13 +151,11 @@ class App extends React.Component {
               />
               <BotaoCriarPlaylist onClick={this.buscaPlaylist}>CRIAR PLAYLIST</BotaoCriarPlaylist>
             </SecaoPlaylist>
-            <div>
+            <SecaoPlaylist>
               {renderizaPlaylists()}
-            </div>
+            </SecaoPlaylist>
           </ContainerCriarPlaylist>
-          <Music />
-
-          
+          <Music />          
         </ContainerAdicionaItens>
 
         
@@ -173,7 +167,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-/* <ContainerListaDePlaylist>
-          
-   </ContainerListaDePlaylist> */

@@ -2,6 +2,41 @@ import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
+const ContainerDetails = styled.div
+`
+width: 31.5vw;
+display: flex;
+flex-direction: column;
+justify-content: center;
+`
+const ContainerDosItens = styled.div
+`
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 2vh;
+font-weight: bold; 
+`
+const BotaoVoltar = styled.button
+`
+width: 10vw;
+height: 6vh;
+background-color: green;
+color: white;
+border-style: none;
+font-size: 12px;
+font-weight: bold;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 3vh;
+`
+
+const PlayerAudio = styled.audio
+`
+margin-top: 1vh;
+`
+
 class Details extends React.Component {
 
     state = {
@@ -29,13 +64,15 @@ class Details extends React.Component {
     render () {
 
         return (
-            <div>
-                {this.state.nomeDaPlaylist}
-                {this.state.musicasNaPlaylist.map((musica) => {
-                    return <li key={musica.id}>Nome da Música: {musica.name} Artista: {musica.artist} Reproduzir: <audio src={musica.url} controls></audio> </li>
-                })}
-                <button onClick={this.props.voltarPlaylists}>Voltar</button>
-            </div>
+            <ContainerDetails>
+                <h3>{this.state.nomeDaPlaylist}</h3>
+                <div>
+                    {this.state.musicasNaPlaylist.map((musica) => {
+                        return <ContainerDosItens key={musica.id}>Nome da Música: {musica.name} Artista: {musica.artist} <PlayerAudio src={musica.url} controls></PlayerAudio> </ContainerDosItens>
+                    })}
+                </div>
+                <BotaoVoltar onClick={this.props.voltarPlaylists}>Voltar</BotaoVoltar>
+            </ContainerDetails>
         )
 
     }
