@@ -1,6 +1,5 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
 import Logo from '../images/logo.png'
 import BotaoMatch from '../images/avatar.svg'
 import BotaoHome from '../images/grupo.svg'
@@ -46,6 +45,9 @@ border-style: none;
 const Botoes = styled.img
 `
 width: 2vw;
+:hover {
+    width: 1.5vw;
+}
 `
 
 function Header(props) {
