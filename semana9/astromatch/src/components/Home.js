@@ -15,6 +15,16 @@ align-items: center;
 justify-content: space-around;
 `
 
+const ContainerMensagem = styled.div
+`
+display: flex;
+width: 30vw;
+height: 80vh;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+`
+
 const ContainerBotoes = styled.div
 `
 width: 28vw;
@@ -67,18 +77,25 @@ grid-row: 1/3;
 grid-column: 2/3;
 `
 
-function Home() {
+function Home(props) {
 
     const [perfilExibido, setPerfilExibido] = useState([])
+    const [percorrido, setPercorrido] = useState(false)
 
     useEffect(() => {
         retornaPerfil()
-    }, [])
+        setPercorrido(false)
+    }, [props.atualizaEstado])
 
     const retornaPerfil = () => {
         axios.get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/julio-gabriel-turing/person`,)
         .then((response) => {
-            setPerfilExibido(response.data.profile)
+            if (response.data.profile !== null) {
+                setPerfilExibido(response.data.profile)
+            } else {
+                setPercorrido(true)
+                setPerfilExibido([])
+            }   
         })
         .catch((error) => {
             console.log(error.message)
@@ -86,11 +103,18 @@ function Home() {
     }
 
     const renderizaNaTela = () => {
-        if (perfilExibido.length === 0) {
+        if (perfilExibido.length === 0 && percorrido === false) {
             return (
                 <ContainerHome>
                     <CircularProgress />
                 </ContainerHome>
+            )
+        } else if (percorrido === true) {
+            return (
+                <ContainerMensagem>
+                    <p>Você já percorreu todas as opções, caso queira ver novamente, clique para limpar swipes e 
+                    matches.</p>
+                </ContainerMensagem>
             )
         } else {
             return (
