@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import BotaoGostei from './BotaoGostei'
+import BotaoNaoGostei from './BotaoNaoGostei'
 
 const ContainerHome = styled.div 
 `
@@ -54,39 +57,6 @@ font-weight: bold;
 margin-left: 1vw;
 `
 
-const BotaoNaoGostei = styled.button
-`
-border: 1px solid red;
-color: red;
-font-weight: bold;
-font-size: 32px;
-width: 4vw;
-height: 4vw;
-background: transparent;
-border-radius: 100%;
-margin-right: 1vw;
-:hover{
-    background-color: red;
-    color: white;
-} 
-`
-
-const BotaoGostei = styled.button
-`
-border: 1px solid green;
-color: green;
-font-weight: bold;
-font-size: 32px;
-width: 4vw;
-height: 4vw;
-background: transparent;
-border-radius: 100%;
-:hover{
-    background-color: green;
-    color: white;
-}
-`
-
 const ImagemPerfil = styled.img
 `
 width: 28vw;
@@ -101,14 +71,12 @@ function Home() {
 
     const [perfilExibido, setPerfilExibido] = useState([])
 
-    const aluno = "julio-gabriel-turing"
-
     useEffect(() => {
-        retornaPerfil(aluno)
+        retornaPerfil()
     }, [])
 
-    const retornaPerfil = (aluno) => {
-        axios.get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/person`,)
+    const retornaPerfil = () => {
+        axios.get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/julio-gabriel-turing/person`,)
         .then((response) => {
             setPerfilExibido(response.data.profile)
         })
@@ -117,48 +85,42 @@ function Home() {
         })
     }
 
-    const onClickNaoGostei = (Identificador) => {
-        const body = {
-            "id": `${Identificador}`,
-	        "choice": false
+    const renderizaNaTela = () => {
+        if (perfilExibido.length === 0) {
+            return (
+                <ContainerHome>
+                    <CircularProgress />
+                </ContainerHome>
+            )
+        } else {
+            return (
+                <ContainerHome>
+                    <InfoPerfil>
+                        <ImagemPerfil src={perfilExibido.photo}></ImagemPerfil>
+                        <ConteudoPerfil>
+                            <NomeIdade>{perfilExibido.name}, {perfilExibido.age}</NomeIdade>
+                            <Biografia>{perfilExibido.bio}</Biografia>
+                        </ConteudoPerfil>
+                    </InfoPerfil>
+                    <ContainerBotoes>
+                        <BotaoNaoGostei 
+                            keyDoPerfil={perfilExibido.id}
+                            atualizaEstado={retornaPerfil}
+                        />
+                        <BotaoGostei 
+                            keyDoPerfil={perfilExibido.id}
+                            atualizaEstado={retornaPerfil}
+                        />
+                    </ContainerBotoes>
+                </ContainerHome>
+            )
         }
-        axios.post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/choose-person`, body,)
-        .then((response) => {
-            retornaPerfil(aluno)
-        })
-        .catch((error) => {
-            console.log(error.message)
-        })    
-    }
-
-    const onClickGostei = (Identificador) => {
-        const body = {
-            "id": `${Identificador}`,
-            "choice": true
-        }
-        axios.post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/choose-person`, body,)
-        .then((response) => {
-            retornaPerfil(aluno)
-        })
-        .catch((error) => {
-            console.log(error.message)
-        })
     }
 
     return (
-        <ContainerHome>
-            <InfoPerfil>
-                <ImagemPerfil src={perfilExibido.photo}></ImagemPerfil>
-                <ConteudoPerfil>
-                    <NomeIdade>{perfilExibido.name}, {perfilExibido.age}</NomeIdade>
-                    <Biografia>{perfilExibido.bio}</Biografia>
-                </ConteudoPerfil>
-            </InfoPerfil>
-            <ContainerBotoes>
-                <BotaoNaoGostei onClick={() => onClickNaoGostei(perfilExibido.id)}>X</BotaoNaoGostei>
-                <BotaoGostei onClick={() => onClickGostei(perfilExibido.id)}>❤</BotaoGostei>
-            </ContainerBotoes>
-        </ContainerHome>
+        <div>
+            {renderizaNaTela()}
+        </div>
     )
 }
 

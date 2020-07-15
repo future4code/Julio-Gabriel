@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
-
+import Header from './components/Header'
 import Home from './components/Home'
 import Matches from './components/Matches'
-import Header from './components/Header'
 
 const ContainerGeral = styled.div
 `
 width: 100vw;
-min-height: 100vh;
+height: 100vh;
 background: #d3d3d3;
 display: flex;
 flex-direction: column;
@@ -20,7 +19,7 @@ align-items: center;
 const Container = styled.div
 `
 width: 30vw;
-min-height: 90vh;
+height: 90vh;
 border-radius: 5px;
 border: 1px solid black;
 background: white;
@@ -36,17 +35,16 @@ right: 5px;
 function App() {
 
   const [botaoMudaPagina, setBotaoMudaPagina] = useState(false)
+  const [atualizaMatches, setAtualizaMatches] = useState(false)
 
   const onClickBotaoMudaPagina = () => {
     setBotaoMudaPagina(!botaoMudaPagina)
   }
 
-  const aluno = "julio-gabriel-turing"
-
   const onClickLimpaTudo = () => {
-    axios.put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/${aluno}/clear`,)
+    axios.put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/julio-gabriel-turing/clear`,)
     .then((response) => {
-      console.log("Limpou com sucesso")
+      setAtualizaMatches(true)
     })
     .catch((error) => {
       console.log(error.message)
@@ -60,7 +58,9 @@ function App() {
       )
     } else {
       return (
-        <Matches />
+        <Matches 
+          atualizaEstado={atualizaMatches}
+        />
       )
     }
   }
