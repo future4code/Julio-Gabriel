@@ -27,6 +27,22 @@ function BotaoNaoGostei(props) {
         setIdentificador(props.keyDoPerfil)
     }, [props.keyDoPerfil])
 
+    useEffect (()=> {
+
+        document.addEventListener("keydown", onTeclaPressionada)
+
+        function onTeclaPressionada(event) {
+            if(event.code === "ArrowLeft") {
+                onClickNaoGostei()
+            }
+        }
+
+        return () => {
+            document.removeEventListener('keydown', onTeclaPressionada) 
+        }
+        
+    })
+
     const onClickNaoGostei = () => {
         const body = {
             "id": `${identificador}`,

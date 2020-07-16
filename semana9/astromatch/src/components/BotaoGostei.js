@@ -35,6 +35,22 @@ function BotaoGostei(props) {
         setMatch(false)
     }, [props.keyDoPerfil])
 
+    useEffect (()=> {
+
+        document.addEventListener("keydown", onTeclaPressionada)
+
+        function onTeclaPressionada(event) {
+            if(event.code === "ArrowRight") {
+                onClickGostei()
+            }
+        }
+
+        return () => {
+            document.removeEventListener('keydown', onTeclaPressionada) 
+        }
+
+    })
+    
     const onClickGostei = () => {
         const body = {
             "id": `${identificador}`,
@@ -50,7 +66,7 @@ function BotaoGostei(props) {
         })
     }
 
-    const deuCerto = () => {
+    const gostouTambem = () => {
         if (match) {
             return (
                 <Texto>Gostou de você</Texto>
@@ -63,7 +79,7 @@ function BotaoGostei(props) {
     }
 
     return (
-        deuCerto()
+        gostouTambem()
     )
 }
 
