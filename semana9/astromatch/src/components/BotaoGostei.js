@@ -18,12 +18,21 @@ border-radius: 100%;
 }
 `
 
+const Texto = styled.p
+`
+font-size: 16px;
+font-weight: bold;
+color: green;
+`
+
 function BotaoGostei(props) {
 
     const [identificador, setIdentificador] = useState(0)
+    const [match, setMatch] = useState(false)
 
     useEffect (()=> {
         setIdentificador(props.keyDoPerfil)
+        setMatch(false)
     }, [props.keyDoPerfil])
 
     const onClickGostei = () => {
@@ -33,6 +42,7 @@ function BotaoGostei(props) {
         }
         axios.post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/julio-gabriel-turing/choose-person`, body,)
         .then((response) => {
+            setMatch(response.data.isMatch)
             props.atualizaEstado()
         })
         .catch((error) => {
@@ -40,8 +50,20 @@ function BotaoGostei(props) {
         })
     }
 
+    const deuCerto = () => {
+        if (match) {
+            return (
+                <Texto>Gostou de você</Texto>
+            )
+        } else {
+            return (
+                <Botao onClick={onClickGostei}>❤</Botao>
+            )
+        }
+    }
+
     return (
-        <Botao onClick={onClickGostei}>❤</Botao>
+        deuCerto()
     )
 }
 
