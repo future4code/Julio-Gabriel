@@ -13,9 +13,7 @@ function App() {
     <div>
       <Header />
       <CreateTripPage />
-      <ListTripsPage />
-      <Router />
-      <TripDetailsPage />
+      <ApplicationFormPage />
       <Footer />
     </div>
   )
