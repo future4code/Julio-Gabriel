@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
 const ContainerHomePage = styled.div
 `
@@ -47,13 +47,21 @@ font-size: 24px;
 `
 
 function HomePage() {
+
+    const history = useHistory()
+
+    const onClickInscrever = () => {
+        history.push("/inscricao")
+    }
+
     return(
         <ContainerHomePage>
             <Titulo>FAÇA A VIAGEM ESPACIAL DO SEU SONHO</Titulo>
             <Descricao>FICOU INTERESSADO? PARTICIPE DO PROCESSO</Descricao>
-            <BotaoInscricao>INSCREVA-SE</BotaoInscricao>
+            <BotaoInscricao onClick={onClickInscrever}>INSCREVA-SE</BotaoInscricao>
         </ContainerHomePage>
     )
+    
 }
 
 export default HomePage

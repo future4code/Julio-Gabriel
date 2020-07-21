@@ -20,6 +20,7 @@ color: white;
 `
 
 function Header() {
+
     return (
         <ContainerCabecalho>
             <Logo>LabeX</Logo>

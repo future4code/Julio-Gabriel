@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import axios from "axios"
+import useInput from '../hooks/useInput'
+import {useHistory} from 'react-router-dom'
 
 const ContainerLogin = styled.div
 `
@@ -28,13 +29,23 @@ margin-right: 1vw;
 `
 
 function LoginPage() {
+
+    const [email, setEmail] = useInput("")
+    const [senha, setSenha] = useInput("")
+
+    const history = useHistory()
+
+    const onClickEntrar = () => {
+        history.replace("/admin")
+    }
+
     return (
         <ContainerLogin>
             <label>Email</label>
-            <EntradaDeDados type="email"></EntradaDeDados>
+            <EntradaDeDados type="email" value={email} onChange={setEmail}></EntradaDeDados>
             <label>Senha</label>
-            <EntradaDeDados type="password"></EntradaDeDados>
-            <BotaoLogin>ENTRAR</BotaoLogin>
+            <EntradaDeDados type="password" value={senha} onChange={setSenha}></EntradaDeDados>
+            <BotaoLogin onClick={onClickEntrar}>ENTRAR</BotaoLogin>
         </ContainerLogin>
     )
 }
