@@ -39,15 +39,24 @@ height: 10vh;
 margin-bottom: 1vh;
 `
 
+const BotaoCadastrar = styled.button
+`
+width: 10vw;
+height: 5vh;
+background-color: #FF4500;
+border-style: none;
+color: white;
+`
+
 function ApplicationFormPage() {
 
     const [viagens, setViagens] = useState([])
-    const [nome, onChangeNome] = useInput("")
-    const [idade, onChangeIdade] = useInput("")
-    const [why, onChangeWhy] = useInput("")
-    const [profissao, onChangeProfissao] = useInput("")
-    const [pais, onChangePais] = useInput("")
-    const [trip, onChangeTrip] = useInput("")
+    const [nome, onChangeNome, setNome] = useInput("")
+    const [idade, onChangeIdade, setIdade] = useInput("")
+    const [why, onChangeWhy, setWhy] = useInput("")
+    const [profissao, onChangeProfissao, setProfissao] = useInput("")
+    const [pais, onChangePais, setPais] = useInput("")
+    const [trip, onChangeTrip, setTrip] = useInput("")
     const history = useHistory()
 
     useEffect (()=> {
@@ -63,9 +72,30 @@ function ApplicationFormPage() {
     const onClickHomePage = () => {
         history.push("/")
     }
-    
+
+    const onClickCadastrarCandidato = (Identificador) => {
+        const body = {
+            name: nome,
+            age: idade,
+            applicationText: why,
+            profession: profissao,
+            country: pais
+        }
+        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/julio-gabriel-turing/trips/${Identificador}/apply`, body,)
+        .then((response) => {
+            setNome("")
+            setIdade("")
+            setWhy("")
+            setProfissao("")
+            setPais("")
+            setTrip("")
+            alert("Você se cadastrou com sucesso")
+        }).catch((error) => {
+            alert("Ops, houve um erro, tente novamente mais tarde")
+        })
+    }
+
     return (
-        
         <ContainerFormulario>
             <Titulos>NOME COMPLETO:</Titulos>
             <EntradaDeDados type="text" value={nome} onChange={onChangeNome}></EntradaDeDados>
@@ -89,6 +119,7 @@ function ApplicationFormPage() {
                     return <option key={viagem.id} value={viagem.id}>{viagem.name}</option>
                 })}
             </SelecaoDeDados>
+            <BotaoCadastrar onClick={() => onClickCadastrarCandidato(trip)}>CADASTRAR</BotaoCadastrar>
             <button onClick={onClickHomePage}>VOLTAR</button>
         </ContainerFormulario>
     )

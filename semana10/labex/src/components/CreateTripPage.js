@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import useInput from '../hooks/useInput'
 import {useHistory} from 'react-router-dom'
+import axios from 'axios'
 
 const ContainerEntradas = styled.div
 `
@@ -51,15 +52,41 @@ margin: 0;
 
 function CreateTripPage() {
 
-    const [nome, onChangeNome] = useInput("")
-    const [data, onChangeData] = useInput("")
-    const [duracao, onChangeDuracao] = useInput("")
-    const [descricao, onChangeDescricao] = useInput("")
-    const [planeta, onChangePlaneta] = useInput("")
+    const [nome, onChangeNome, setNome] = useInput("")
+    const [data, onChangeData, setData] = useInput("")
+    const [duracao, onChangeDuracao, setDuracao] = useInput("")
+    const [descricao, onChangeDescricao, setDescricao] = useInput("")
+    const [planeta, onChangePlaneta, setPlaneta] = useInput("")
     const history = useHistory()
 
     const onClickAdmin = () => {
         history.push("/admin")
+    }
+
+    const onClickCriarViagem = () => {
+        const token = window.localStorage.getItem("token")
+        const body = {
+            name: nome, 
+            planet: planeta,
+            date: data,
+            description: descricao,
+            durationInDays: duracao
+        }
+        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/julio-gabriel-turing/trips`, body, {
+            headers: {
+                auth: token
+            }
+        }).then((response) => {
+            setNome("")
+            setData("")
+            setDuracao("")
+            setDescricao("")
+            setPlaneta("")
+            alert("Viagem cadastrada com sucesso")
+        }).catch((error) => {
+            alert("Ops, houve um erro, tente novamente mais tarde.")
+            console.log(error.message)
+        })
     }
 
     return(
@@ -91,9 +118,9 @@ function CreateTripPage() {
                 <EntradaDescricao type="text" value={descricao} onChange={onChangeDescricao}></EntradaDescricao>
             </PosicionamentoEntradas>
             <PosicionamentoEntradas>
-            <BotaoCadastrar>CADASTRAR</BotaoCadastrar>
+            <BotaoCadastrar onClick={onClickCriarViagem}>CADASTRAR</BotaoCadastrar>
             </PosicionamentoEntradas>
-            <BotaoAdmin onClick={onClickAdmin}>Voltar</BotaoAdmin> 
+            <BotaoAdmin onClick={onClickAdmin}>Voltar</BotaoAdmin>
         </ContainerEntradas>
     )
 }

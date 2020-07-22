@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import {useHistory} from 'react-router-dom'
 
@@ -12,12 +12,18 @@ function Admin() {
 
     const history = useHistory()
 
+    useEffect(() => {
+
+        const token = window.localStorage.getItem("token")
+
+        if (token === null) {
+            history.push("/")
+        }
+
+    }, [history])
+
     const onClickListaDeViagens = () => {
         history.push("/listadeviagens")
-    }
-
-    const onClickListaDeInscritos = () => {
-        history.push("/detalhesdaviagem")
     }
 
     const onClickCreateTripPage = () => {
@@ -27,7 +33,6 @@ function Admin() {
     return(
         <ContainerAdmin>
             <button onClick={onClickListaDeViagens}>Lista de Viagens</button>
-            <button onClick={onClickListaDeInscritos}>Lista de Inscritos</button>
             <button onClick={onClickCreateTripPage}>Criar Viagem</button>
         </ContainerAdmin>
     )
