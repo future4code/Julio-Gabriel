@@ -1,14 +1,19 @@
 import React, {useState} from 'react'
 
-const useInput = () => {
+const useInput = (initialValues) => {
 
-    const [valor, setValor] = useState("")
+    const [form, setForm] = useState(initialValues)
 
-    const onChangeValor = (event) => {
-        setValor(event.target.value)
+    const onChange = (name, value) => {
+        const newForm = {...form, [name]: value}
+        setForm(newForm)
     }
 
-    return [valor, onChangeValor, setValor]
+    const resetaEntrada = () => {
+        setForm(initialValues)
+    }
+        
+    return {form, onChange, resetaEntrada}
 }
 
 export default useInput

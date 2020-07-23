@@ -41,24 +41,36 @@ margin-right: 1vw;
 
 function LoginPage() {
 
-    const [email, onChangeEmail, setEmail] = useInput("")
-    const [senha, onChangeSenha, setSenha] = useInput("")
+    const {form, onChange, resetaEntrada} = useInput({
+        email: "",
+        senha: ""
+    })
+    
     const [atualizaEstado, setAtualizaEstado] = useState(false)
 
     const history = useHistory()
 
+    const handleInputChange = (event) => {
+        const {name, value} = event.target
+        onChange(name, value)
+    }
+
+    const handleSave = (event) => {
+        event.preventDefault()
+        onClickEntrar()
+    }
+
     const onClickEntrar = () => {
         const body = {
-            email: email,
-            password: senha
+            email: form.email,
+            password: form.senha
         }
         axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/julio-gabriel-turing/login", body)
         .then((response) => {
             window.localStorage.setItem("token", response.data.token)
+            resetaEntrada()
             history.replace("/admin")
             setAtualizaEstado(!atualizaEstado)
-            setEmail("")
-            setSenha("")
         })
         .catch((error) => {
             console.log(error.message)
@@ -78,11 +90,23 @@ function LoginPage() {
         if (token === null) {
             return (
                 <div>
-                    <label>Email</label>
-                    <EntradaDeDados type="email" value={email} onChange={onChangeEmail}></EntradaDeDados>
-                    <label>Senha</label>
-                    <EntradaDeDados type="password" value={senha} onChange={onChangeSenha}></EntradaDeDados>
-                    <BotaoLogin onClick={onClickEntrar} type="reset">ENTRAR</BotaoLogin>
+                    <form onSubmit={handleSave}>
+                        <label>Email</label>
+                        <EntradaDeDados
+                            name="email" 
+                            type="email" 
+                            value={form.email} 
+                            onChange={handleInputChange} 
+                        />
+                        <label>Senha</label>
+                        <EntradaDeDados
+                            name="senha" 
+                            type="password" 
+                            value={form.senha} 
+                            onChange={handleInputChange} 
+                        />
+                        <BotaoLogin>ENTRAR</BotaoLogin>
+                    </form>
                 </div>
             )
         } else {
