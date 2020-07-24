@@ -4,7 +4,7 @@ import LoginPage from '../components/LoginPage'
 
 const ContainerCabecalho = styled.div
 `
-width: 100vw;
+width: 100%;
 height: 15vh;
 background-color: black;
 display: flex;

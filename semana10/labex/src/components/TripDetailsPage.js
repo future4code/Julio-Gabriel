@@ -1,96 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import styled from 'styled-components'
 import axios from 'axios'
 import {useHistory, useParams} from 'react-router-dom'
-
-const ContainerDetalhesDaViagem = styled.div
-`
-margin: 0 5vw;
-width: 90vw;
-min-height: 70vh;
-display: flex;
-flex-direction: column;
-`
-
-const Viagem = styled.div
-`
-margin: 2vh;
-border: 1px solid #FF4500;
-border-radius: 1vw;
-display: flex;
-flex-direction: column;
-justify-content: center;
-`
-
-const ContainerPessoas = styled.div
-`
-width: 88vw;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-flex-wrap: wrap;
-`
-
-const ContainerDadosPessoas = styled.div
-`
-border: 1px solid #FF4500;
-border-radius: 1vw;
-width: 30vw;
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin-bottom: 5vh; 
-`
-
-const Posicionamentos = styled.div
-`
-margin: 2vh;
-border: 1px solid #FF4500;
-border-radius: 1vw;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-`
-
-const PosicionamentoDados = styled.div
-`
-margin: 0 1vw;
-`
-
-const BotaoAprovar = styled.button
-`
-background-color: green;
-color: white;
-width: 8vw;
-height: 5vh;
-border-style: none;
-border-radius: 5%;
-margin-right: 1vw;
-`
-
-const BotaoReprovar = styled.button
-`
-background-color: red;
-color: white;
-width: 8vw;
-height: 5vh;
-border-style: none;
-border-radius: 5%;
-margin-bottom: 1vh;
-`
-
-const BotaoVoltar = styled.button
-`
-width: 8vw;
-height: 2vw;
-border-style: none;
-background-color: #FF4500;
-color: white;
-font-size: 16px;
-font-weight: bold;
-margin: 2vh 0;
-`
+import {BotaoVoltar, BotaoReprovar, BotaoAprovar, PosicionamentoDados, Posicionamentos, ContainerDadosPessoas, 
+ContainerPessoas, Viagem, ContainerDetalhesDaViagem} from './StyleTripDetailsPage'
 
 function TripDetailsPage() {
 
@@ -114,7 +26,7 @@ function TripDetailsPage() {
             detalhesDaViagem()
         }
         
-    }, [])
+    }, [history])
 
     const detalhesDaViagem = () => {
         const token = window.localStorage.getItem("token")
@@ -144,9 +56,9 @@ function TripDetailsPage() {
             }
         }).then((response) => {
             detalhesDaViagem()
-            console.log("Você aprovou um candidato")
+            alert("Você aprovou um candidato")
         }).catch((error) => {
-            console.log("Ocorreu um erro, tente novamente mais tarde.")
+            alert("Ocorreu um erro, tente novamente mais tarde.")
         })
     }
 
@@ -161,9 +73,9 @@ function TripDetailsPage() {
             }
         }).then((response) => {
             detalhesDaViagem()
-            console.log("Você reprovou um candidato")
+            alert("Você reprovou um candidato")
         }).catch((error) => {
-            console.log("Ocorreu um erro, tente novamente mais tarde.")
+            alert("Ocorreu um erro, tente novamente mais tarde.")
         })
     }
 

@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import styled from "styled-components"
 import axios from "axios"
 import useInput from '../hooks/useInput'
 import {useHistory} from 'react-router-dom'
-
 
 const ContainerLogin = styled.div
 `
@@ -18,7 +17,9 @@ color: white;
 const BotaoLogin = styled.button
 `
 height: 5vh;
+width: 6vw;
 border-style: none;
+border-radius: 1vw;
 background-color: #FF4500;
 color: white;
 `
@@ -27,7 +28,9 @@ const BotaoLogout = styled.button
 `
 margin-left: 1vw;
 height: 5vh;
+width: 6vw;
 border-style: none;
+border-radius: 1vw;
 background-color: #FF4500;
 color: white;
 `

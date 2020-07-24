@@ -1,12 +1,6 @@
-import React, {useEffect, useState} from 'react'
-import styled from 'styled-components'
+import React, {useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
-
-const ContainerAdmin = styled.div
-`
-width: 90vw;
-height: 70vh;
-`
+import {ContainerAdmin, ContainerSecoes, ContainerConteudo, InformacaoSecao, TituloSecao, BotaoSecoes} from './StyleAdmin'
 
 function Admin() {
 
@@ -32,8 +26,20 @@ function Admin() {
 
     return(
         <ContainerAdmin>
-            <button onClick={onClickListaDeViagens}>Lista de Viagens</button>
-            <button onClick={onClickCreateTripPage}>Criar Viagem</button>
+            <ContainerSecoes>
+                <ContainerConteudo>
+                    <TituloSecao>LISTA DE VIAGENS</TituloSecao>
+                    <InformacaoSecao>Aqui você vê todas as viagens e pode visualizar detalhes de uma viagem em específico e aprovar/reprovar candidatos.</InformacaoSecao>
+                </ContainerConteudo>
+                <BotaoSecoes onClick={onClickListaDeViagens}>Lista de Viagens</BotaoSecoes>
+            </ContainerSecoes>
+            <ContainerSecoes>
+                <ContainerConteudo>
+                    <TituloSecao>CRIAR VIAGEM</TituloSecao>
+                    <InformacaoSecao>Aqui você pode criar novas viagens de modo rápido e intuitivo.</InformacaoSecao>
+                </ContainerConteudo>
+                <BotaoSecoes onClick={onClickCreateTripPage}>Criar Viagem</BotaoSecoes>
+            </ContainerSecoes>
         </ContainerAdmin>
     )
 }
