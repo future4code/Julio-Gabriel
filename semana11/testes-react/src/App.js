@@ -11,7 +11,7 @@ const App = () => {
     if (postsList.length !== 0) {
       return (
         <div>
-            <h5>Quantidade de posts: {postsList.length}</h5>
+            <h5 data-testid={"erro"}>Quantidade de posts: {postsList.length}</h5>
             {postsList.map(post => {
               return (
                 <Post

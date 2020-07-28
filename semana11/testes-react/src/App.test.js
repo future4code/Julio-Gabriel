@@ -121,12 +121,29 @@ test("Quando não tiver nenhum post deve aparecer uma mensagem dizendo que não 
     expect(mensagemPost).toBeInTheDocument()
 })
 
+test("Quando criar uma tarefa deve sumir a mensagem dizendo que não há nenhum post", () => {
+    const {queryByTestId} = criaTarefa()
+
+    const mensagemPost = queryByTestId('mensagem')
+
+    expect(mensagemPost).not.toBeInTheDocument()
+
+})
+
 test("Quando tiver pelo menos um post deve aparecer uma mensagem dizendo quantos post possuem", () => {
     const {getByText} = criaTarefa()
 
     const contagem = getByText(/Quantidade de posts: 1/)
 
     expect(contagem).toHaveTextContent(/Quantidade de posts: 1/)
+})
+
+test("Quando não tiver nenhum post deve sumir a mensagem que informa a quantidade de posts", () => {
+    const {queryByTestId} = render(<App />)
+    
+    const mensagemErro = queryByTestId('erro')
+    
+    expect(mensagemErro).not.toBeInTheDocument()
 })
 
 test("Quando o usuário digitar o campo vazio e clicar em adicionar aparece uma mensagem dizendo que não é permitido", () => {
