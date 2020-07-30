@@ -28,9 +28,10 @@ function ScreenEdit(props) {
                 type="text"
                 value={form.task}
                 onChange={handleInputChange}
+                data-testid="editainput"
                 required
             />
-            <select name="dayOfWeek" value={form.dayOfWeek} onChange={handleInputChange} required>
+            <select name="dayOfWeek" value={form.dayOfWeek} onChange={handleInputChange} data-testid="editaselect" required>
                 <option value="">Selecione um dia da semana</option>
                 <option value="Domingo">Domingo</option>
                 <option value="Segunda">Segunda-feira</option>

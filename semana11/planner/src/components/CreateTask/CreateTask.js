@@ -87,11 +87,12 @@ function CreateTask() {
                     <input 
                         name="task"
                         type="text"
+                        placeholder="Digite aqui o nome da tarefa"
                         value={form.task}
                         onChange={handleInputChange}
                         required
                     />
-                    <select name="dayOfWeek" value={form.dayOfWeek} onChange={handleInputChange} required>
+                    <select name="dayOfWeek" value={form.dayOfWeek} onChange={handleInputChange} data-testid="selecionadia" required>
                         <option value="">Selecione um dia da semana</option>
                         <option value="Domingo">Domingo</option>
                         <option value="Segunda">Segunda-feira</option>

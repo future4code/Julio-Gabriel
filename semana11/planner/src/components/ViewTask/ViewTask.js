@@ -118,7 +118,7 @@ function ViewTask(props) {
                 <h3>Domingo</h3>
                 {listOfTasksDomingo.map((task) => {
                     return (
-                        <li key={task.id}>
+                        <li key={task.id} data-testid="domingo">
                             {task.text}
                             <button onClick={() => props.funcaoDeletarTarefa(task.id)}>Deletar</button>
                             <button onClick={() => openScreenEdit(task.id, task.text)}>Editar</button>
@@ -126,7 +126,7 @@ function ViewTask(props) {
                     )
                 })}
             </div>
-            <div>
+            <div data-testid="segunda">
                 <h3>Segunda</h3>
                 {listOfTasksSegunda.map((task) => {
                     return (
@@ -138,7 +138,7 @@ function ViewTask(props) {
                     )
                 })}
             </div>
-            <div>
+            <div data-testid="terca">
                 <h3>Terça</h3>
                 {listOfTasksTerca.map((task) => {
                     return (
@@ -150,7 +150,7 @@ function ViewTask(props) {
                     )
                 })}
             </div>
-            <div>
+            <div data-testid="quarta">
                 <h3>Quarta</h3>
                 {listOfTasksQuarta.map((task) => {
                     return (
@@ -162,7 +162,7 @@ function ViewTask(props) {
                     )
                 })}
             </div>
-            <div>
+            <div data-testid="quinta">
                 <h3>Quinta</h3>
                 {listOfTasksQuinta.map((task) => {
                     return (
@@ -174,7 +174,7 @@ function ViewTask(props) {
                     )
                 })}
             </div>
-            <div>
+            <div data-testid="sexta">
                 <h3>Sexta</h3>
                 {listOfTasksSexta.map((task) => {
                     return (
@@ -186,7 +186,7 @@ function ViewTask(props) {
                     )
                 })}
             </div>
-            <div>
+            <div data-testid="sabado">
                 <h3>Sabado</h3>
                 {listOfTasksSabado.map((task) => {
                     return (
