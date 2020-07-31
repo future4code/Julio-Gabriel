@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import styled from 'styled-components'
 import axios from 'axios'
 import useInput from '../../hooks/useInput'
 import ViewTask from '../ViewTask/ViewTask';
+import {ContainerCreateTask, Entrada, Selecao, BotaoCriarTarefa} from './StyleCreateTask'
+
+const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel'
 
 function CreateTask() {
 
@@ -17,7 +19,7 @@ function CreateTask() {
     }, [])
 
     const getListOfTasks = () => {
-        axios.get("https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel",)
+        axios.get(`${baseUrl}`,)
         .then((response) => {
             setListOfTasks(response.data)
         })
@@ -26,10 +28,17 @@ function CreateTask() {
         })
     }
 
-    const deleteTaskOfList = (Identificador) => {
-        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel/${Identificador}`)
+    const CreateTask = () => {
+        const body = {
+            text: form.task, 
+            day: form.dayOfWeek,
+            completa: false
+        }
+
+        axios.post(`${baseUrl}`, body)
         .then((response) => {
-            alert("Você excluiu com sucesso a tarefa")
+            resetInput()
+            alert("Você inseriu a tarefa com sucesso")
             getListOfTasks()
         })
         .catch((error) => {
@@ -42,9 +51,31 @@ function CreateTask() {
             text: Texto, 
             day: Dia
         }
-        axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel/${Identificador}`, body)
+        editRequestTask(body, Identificador)
+    }
+
+    const completedTask = (tarefa) => {
+        const body = {
+            completa: !tarefa.completa
+        }
+        editRequestTask(body, tarefa.id)
+    }
+
+    const editRequestTask = (body, Identificador) => {
+        axios.put(`${baseUrl}/${Identificador}`, body)
         .then((response) => {
             alert("Você editou com sucesso")
+            getListOfTasks()
+        })
+        .catch((error) => {
+            alert(error.message)
+        })
+    }
+
+    const deleteTaskOfList = (Identificador) => {
+        axios.delete(`${baseUrl}/${Identificador}`)
+        .then((response) => {
+            alert("Você excluiu com sucesso a tarefa")
             getListOfTasks()
         })
         .catch((error) => {
@@ -62,29 +93,10 @@ function CreateTask() {
         event.preventDefault()
     }
 
-    const CreateTask = () => {
-
-        const body = {
-            text: form.task, 
-            day: form.dayOfWeek
-        }
-
-        axios.post("https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel", body)
-        .then((response) => {
-            resetInput()
-            alert("Você inseriu a tarefa com sucesso")
-            getListOfTasks()
-        })
-        .catch((error) => {
-            alert(error.message)
-        })
-
-    }
-
     return (
-            <div>
+            <ContainerCreateTask>
                 <form onSubmit={handleSave}>
-                    <input 
+                    <Entrada 
                         name="task"
                         type="text"
                         placeholder="Digite aqui o nome da tarefa"
@@ -92,7 +104,7 @@ function CreateTask() {
                         onChange={handleInputChange}
                         required
                     />
-                    <select name="dayOfWeek" value={form.dayOfWeek} onChange={handleInputChange} data-testid="selecionadia" required>
+                    <Selecao name="dayOfWeek" value={form.dayOfWeek} onChange={handleInputChange} data-testid="selecionadia" required>
                         <option value="">Selecione um dia da semana</option>
                         <option value="Domingo">Domingo</option>
                         <option value="Segunda">Segunda-feira</option>
@@ -101,15 +113,16 @@ function CreateTask() {
                         <option value="Quinta">Quinta-feira</option>
                         <option value="Sexta">Sexta-Feira</option>
                         <option value="Sabado">Sábado</option>
-                    </select>
-                    <button>Criar Tarefa</button>
+                    </Selecao>
+                    <BotaoCriarTarefa>Criar Tarefa</BotaoCriarTarefa>
                 </form>
                 <ViewTask 
                     listaDeTarefas = {listOfTasks}
                     funcaoDeletarTarefa = {deleteTaskOfList}
                     funcaoCliqueEditar = {editTask}
+                    funcaoCompletarTarefa = {completedTask}
                 />
-            </div>
+            </ContainerCreateTask>
     )
 }
 

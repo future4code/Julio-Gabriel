@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { render, wait, act } from '@testing-library/react'
+import { render, wait, } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import userEvent from '@testing-library/user-event'
 import App from './App'
@@ -15,12 +15,13 @@ axios.put = jest.fn().mockResolvedValue()
 describe("Renderização inicial", () => {
 
   test("Verifica se o input aparece na tela", () => {
-    
+
     const { getByPlaceholderText } = render(<App />)
 
     const inputAdicionarTarefa = getByPlaceholderText(/Digite aqui o nome da tarefa/)
 
     expect(inputAdicionarTarefa).toBeInTheDocument()
+
   })
 
   test("Verifica se o select aparece na tela", () => {
@@ -37,30 +38,59 @@ describe("Renderização inicial", () => {
     const buttonCriaTarefa = getByText(/Cria/)
 
     expect(buttonCriaTarefa).toBeInTheDocument()
-
   })
 
-  test("Verifica se a requisição da lista toda é feita", async () => {
-    
+  test("Verifica se os dias da semana aparecem na tela", () => {
+    const { getByTestId } = render(<App />)
+
+    expect(axios.get).toHaveBeenCalledWith('https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel')
+
+    const domingo = getByTestId('domingo')
+    const segunda = getByTestId('segunda')
+    const terca = getByTestId('terca')
+    const quarta = getByTestId('quarta')
+    const quinta = getByTestId('quinta')
+    const sexta = getByTestId('sexta')
+    const sabado = getByTestId('sabado')
+
+    expect(domingo).toBeInTheDocument()
+    expect(segunda).toBeInTheDocument()
+    expect(terca).toBeInTheDocument()
+    expect(quarta).toBeInTheDocument()
+    expect(quinta).toBeInTheDocument()
+    expect(sexta).toBeInTheDocument()
+    expect(sabado).toBeInTheDocument()
+  }) 
+
+  test("Verifica se a requisição da lista toda é feita e se a tarefa vai aparecer no dia certo", async () => {    
     axios.get = jest.fn().mockResolvedValue({
       data: [
         {
           id: 1,
           text: "Tarefa Teste 1",
-          day: "Domingo"
+          day: "Domingo",
+          completa: false
         },
         {
           id: 2,
           text: "Tarefa Teste 2",
-          day: "Segunda"
+          day: "Segunda",
+          completa: false
         }
       ]
-    })
+    }) 
 
-    const {} = render(<App />)
+    const {findByTestId} = render(<App />)
 
     expect(axios.get).toHaveBeenCalledWith('https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel')
 
+    const paiDomingo = await findByTestId('paidomingo')
+    const filhoDomingo = await findByTestId('filhodomingo')
+    const paiSegunda = await findByTestId('paisegunda')
+    const filhoSegunda = await findByTestId('filhosegunda')
+
+    expect(paiDomingo).toContainElement(filhoDomingo)
+    expect(paiSegunda).toContainElement(filhoSegunda)
   })
 
 })
@@ -88,7 +118,6 @@ describe("Cria tarefa", () => {
   })
 
   test("Quando o usuário preenche o campo e o dia selecionado e cria a tarefa", async () => {
-
     axios.post = jest.fn().mockResolvedValue()
 
     axios.get = jest.fn().mockResolvedValue({
@@ -109,26 +138,27 @@ describe("Cria tarefa", () => {
 
     expect(axios.post).toHaveBeenCalledWith('https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel', {
       text: 'Tarefa Teste 1',
-      day: 'Domingo'
+      day: 'Domingo',
+      completa: false
     })
 
     await wait(() => {
       expect(axios.get).toHaveBeenCalledTimes(2)
     })
-
   })
 
 })
 
 describe("Edita tarefa", () => {
+  
   test("Renderiza Botao Editar na Tela", async () => {
-
     axios.get = jest.fn().mockResolvedValue({
       data: [
         {
           id: 1,
           text: "Tarefa Teste 1",
-          day: "Domingo"
+          day: "Domingo",
+          completa: false
         }
       ]
     })
@@ -143,13 +173,13 @@ describe("Edita tarefa", () => {
   })
 
   test("Clica no botão de editar tarefa", async () => {
-
     axios.get = jest.fn().mockResolvedValue({
       data: [
         {
           id: 1,
           text: "Tarefa Teste 2",
-          day: "Domingo"
+          day: "Domingo",
+          completa: false
         }
       ]
     })
@@ -178,20 +208,46 @@ describe("Edita tarefa", () => {
     await wait(() => {
       expect(axios.get).toHaveBeenCalledTimes(2)
     })
-
   })
+
+  test("Quando clicar na tarefa deve alterar e riscar a tarefa para marcar como feita", async () => {
+    axios.get = jest.fn().mockResolvedValue({
+      data: [
+        {
+          id: 1,
+          text: "Tarefa Teste 1",
+          day: "Domingo",
+          completa: false
+        }
+      ]
+    })
+
+    axios.put = jest.fn().mockResolvedValue()
+
+    const {findByText} = render(<App />)
+
+    const tarefa = await findByText(/Tarefa Teste 1/)
+    expect(tarefa).toBeInTheDocument()
+
+    userEvent.click(tarefa)
+
+    expect(axios.put).toHaveBeenCalledWith('https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-juliogabriel/1', {
+      completa: true
+    })
+  })
+  
 })
 
 describe("Deletar tarefa", () => {
 
   test("Quando clicar no botão de excluir", async () => {
-
     axios.get = jest.fn().mockResolvedValueOnce({
       data: [
         {
           id: 1,
           text: "Tarefa Teste 1",
-          day: "Domingo"
+          day: "Domingo",
+          completa: false
         }
       ]
     }).mockResolvedValueOnce({
@@ -217,7 +273,6 @@ describe("Deletar tarefa", () => {
     await wait(() => {
       expect(axios.get).toHaveBeenCalledTimes(2)
     })
-
   })
 
-}) 
+})
