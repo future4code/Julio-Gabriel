@@ -3,11 +3,11 @@
     "name": "Julio",
     "cpf": "123.123.123.13",
     "dateofbirth": "18/02/1997",
-    "balance": 0,
+    "balance": 20,
     "extract": [
       {
         "value": 10,
-        "date": 1598643832620,
+        "date": 1598646326,
         "description": "Depósito de dinheiro entre banco"
       }
     ]
@@ -57,7 +57,7 @@
       },
       {
         "value": -10,
-        "date": 1598643832620,
+        "date": 1598646326,
         "description": "Depósito de dinheiro entre banco"
       }
     ]

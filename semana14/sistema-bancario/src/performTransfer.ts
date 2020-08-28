@@ -1,4 +1,5 @@
 import { readDatabase, userCount, writeToDatabase, transaction } from './index'
+import moment from 'moment'
 
 const allAccounts: userCount[] = readDatabase()
 const senderName: string = process.argv[2]
@@ -28,7 +29,7 @@ const performTransfer = (senderName: string, senderCpf: string, recipientName: s
             if (account.name === senderName) {
                 const newTransaction: transaction = {
                     value: -value,
-                    date: Date.now(),
+                    date: moment().unix(),
                     description: "Depósito de dinheiro entre banco"
                 }
     
@@ -36,7 +37,7 @@ const performTransfer = (senderName: string, senderCpf: string, recipientName: s
             } else if (account.name === recipientName) {
                 const newTransaction: transaction = {
                     value: value,
-                    date: Date.now(),
+                    date: moment().unix(),
                     description: "Depósito de dinheiro entre banco"
                 }
     

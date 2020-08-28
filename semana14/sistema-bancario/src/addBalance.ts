@@ -1,4 +1,5 @@
 import { readDatabase, userCount, writeToDatabase, transaction } from './index'
+import moment from 'moment'
 
 const allAccounts: userCount[] = readDatabase()
 const name: string = process.argv[2]
@@ -15,7 +16,7 @@ const addBalance = (name: string, cpf: string, value: number) : void => {
 
             const newTransaction: transaction = {
                 value: value,
-                date: Date.now(),
+                date: moment().unix(),
                 description: "Depósito de dinheiro"
             }
 
