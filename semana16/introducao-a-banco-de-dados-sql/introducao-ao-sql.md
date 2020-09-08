@@ -50,6 +50,13 @@ VALUES(
 
 ~~~SQL
 INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES("005", "Juliana Paes", 719333.33, "1979-03-26", "female")
+~~~
+
+2 f)
+
+~~~SQL
+INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES ("006", "Lima Duarte", 300000, "1930-03-29", "male"),
 ("007", "Regina Duarte", 1000000, "1947-02-05", "female")
 ~~~
