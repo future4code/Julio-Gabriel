@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Julio",
+    "cpf": "123.123.123.13",
+    "dateofbirth": "18/02/1997",
+    "balance": 20,
+    "extract": [
+      {
+        "value": 10,
+        "date": 1598646326,
+        "description": "Depósito de dinheiro entre banco"
+      }
+    ]
+  },
+  {
+    "name": "Tereza",
+    "cpf": "123.123.123.14",
+    "dateofbirth": "18/02/1973",
+    "balance": 0,
+    "extract": []
+  },
+  {
+    "name": "Ronaldo",
+    "cpf": "123.123.123.12",
+    "dateofbirth": "18/02/1997",
+    "balance": 50,
+    "extract": [
+      {
+        "value": 20,
+        "date": 1598631561313,
+        "description": "Depósito de dinheiro"
+      },
+      {
+        "value": 20,
+        "date": 1598631575611,
+        "description": "Depósito de dinheiro"
+      },
+      {
+        "value": 10,
+        "date": 1598635034510,
+        "description": "Depósito de dinheiro"
+      },
+      {
+        "value": 10,
+        "date": 1598635034510,
+        "description": "Depósito de dinheiro"
+      },
+      {
+        "value": -10,
+        "date": 1582990000,
+        "description": "Descricao"
+      },
+      {
+        "value": -10,
+        "date": 1602990000,
+        "description": "Descricao 2"
+      },
+      {
+        "value": -10,
+        "date": 1598646326,
+        "description": "Depósito de dinheiro entre banco"
+      }
+    ]
+  }
+]
